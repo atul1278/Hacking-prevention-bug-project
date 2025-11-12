@@ -1,0 +1,109 @@
+<!-- Save as docs.html -->
+<!DOCTYPE html>
+<html lang="en" class="transition-colors duration-500">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Docs - Web Scanner</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-white transition-all duration-300">
+
+  <nav class="bg-indigo-600 p-4 dark:bg-indigo-800">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="home.html" class="text-white font-bold text-xl">Web Scanner</a>
+      <div class="flex space-x-4 items-center">
+        <a href="demo.html" class="text-white hover:underline">Demo</a>
+        <a href="docs.html" class="text-white hover:underline">Docs</a>
+        <a href="about.html" class="text-white hover:underline">About</a>
+        <a href="features.html" class="text-white hover:underline">Features</a>
+        <a href="contact.html" class="text-white hover:underline">Contact</a>
+        <button id="theme-toggle" class="text-white">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="p-6">
+    
+    <!-- Blog Section -->
+    <section class="max-w-6xl mx-auto mt-10">
+      <h2 class="text-2xl font-bold mb-6">Security Blog Articles</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        
+        <div class="bg-white dark:bg-gray-800 p-5 rounded shadow hover:shadow-lg">
+          <h3 class="text-xl font-semibold mb-2">1. Preventing DoS & DDoS Attacks</h3>
+          <p class="text-sm mb-3">Learn to mitigate server flooding using rate limiting, load balancers, and cloud protection.</p>
+          <a href="https://www.indusface.com/blog/best-practices-to-prevent-ddos-attacks/" class="text-indigo-600 dark:text-indigo-400 hover:underline">Read Full Blog →</a>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 p-5 rounded shadow hover:shadow-lg">
+          <h3 class="text-xl font-semibold mb-2">2. Understanding SQL Injection</h3>
+          <p class="text-sm mb-3">Protect your database from malicious queries by using parameterized statements.</p>
+          <a href="https://owasp.org/www-community/attacks/SQL_Injection" class="text-indigo-600 dark:text-indigo-400 hover:underline">Read Full Blog →</a>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 p-5 rounded shadow hover:shadow-lg">
+          <h3 class="text-xl font-semibold mb-2">3. Defending Against XSS Attacks</h3>
+          <p class="text-sm mb-3">Prevent script injection by sanitizing inputs and applying output encoding.</p>
+          <a href="https://www.esecurityplanet.com/endpoint/prevent-xss-attacks/" class="text-indigo-600 dark:text-indigo-400 hover:underline">Read Full Blog →</a>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 p-5 rounded shadow hover:shadow-lg">
+          <h3 class="text-xl font-semibold mb-2">4. CSRF Attack Prevention</h3>
+          <p class="text-sm mb-3">Block unauthorized requests using anti-CSRF tokens and same-site cookie policies.</p>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/Security/Practical_implementation_guides/CSRF_prevention" class="text-indigo-600 dark:text-indigo-400 hover:underline">Read Full Blog →</a>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 p-5 rounded shadow hover:shadow-lg">
+          <h3 class="text-xl font-semibold mb-2">5. Secure Authentication Tips</h3>
+          <p class="text-sm mb-3">Use JWTs, strong hashing, and two-factor authentication to secure your login system.</p>
+          <a href="https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html" class="text-indigo-600 dark:text-indigo-400 hover:underline">Read Full Blog →</a>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 p-5 rounded shadow hover:shadow-lg">
+          <h3 class="text-xl font-semibold mb-2">6. Input Validation & Sanitization</h3>
+          <p class="text-sm mb-3">Validate inputs on client and server sides to prevent injection and logic flaws.</p>
+          <a href="https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html" class="text-indigo-600 dark:text-indigo-400 hover:underline">Read Full Blog →</a>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 p-5 rounded shadow hover:shadow-lg">
+          <h3 class="text-xl font-semibold mb-2">7. HTTPS & SSL Explained</h3>
+          <p class="text-sm mb-3">Ensure data privacy using HTTPS, SSL certificates, and HSTS headers.</p>
+          <a href="https://www.digicert.com/what-is-ssl-tls-and-https" class="text-indigo-600 dark:text-indigo-400 hover:underline">Read Full Blog →</a>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 p-5 rounded shadow hover:shadow-lg">
+          <h3 class="text-xl font-semibold mb-2">8. Avoiding Session Hijacking</h3>
+          <p class="text-sm mb-3">Secure user sessions with HttpOnly cookies, session expiration, and token rotation.</p>
+          <a href="https://www.globalsign.com/en/blog/session-hijacking-and-how-to-prevent-it" class="text-indigo-600 dark:text-indigo-400 hover:underline">Read Full Blog →</a>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 p-5 rounded shadow hover:shadow-lg">
+          <h3 class="text-xl font-semibold mb-2">9. File Upload Vulnerabilities</h3>
+          <p class="text-sm mb-3">Scan and restrict uploaded files to prevent malware execution on your server.</p>
+          <a href="https://www.cobalt.io/blog/file-upload-vulnerabilities" class="text-indigo-600 dark:text-indigo-400 hover:underline">Read Full Blog →</a>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 p-5 rounded shadow hover:shadow-lg">
+          <h3 class="text-xl font-semibold mb-2">10. Important Security Headers</h3>
+          <p class="text-sm mb-3">Use headers like CSP, X-Frame-Options, and X-Content-Type to harden app security.</p>
+          <a href="https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Headers_Cheat_Sheet.html" class="text-indigo-600 dark:text-indigo-400 hover:underline">Read Full Blog →</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-indigo-600 text-white text-center py-4 dark:bg-indigo-800 mt-10">
+    <p>&copy; 2025 Web Scanner | Created by Atul Kumar Pandey</p>
+  </footer>
+
+  <script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+      document.getElementById("theme-toggle").textContent = document.documentElement.classList.contains("dark") ? "☀️" : "🌙";
+    });
+  </script>
+
+</body>
+</html>

@@ -1,2 +1,2 @@
-# Hacking-prevention-bug-project
-This project focuses on securing systems from cyber threats through secure coding, code reviews, and penetration testing. It prevents SQLi via parameterized queries, XSS by input sanitization, and DoS/DDoS with rate limiting. Data is encrypted at rest and in transit, with JWT-based role access, logging, and continuous monitoring for reliability.
+# web-security-scanner
+A Flask-based web security scanner that detects SQL Injection, XSS, and DoS/DDoS attacks. Features include real-time threat logs, JWT authentication, file upload with email alerts, and a responsive dashboard using Tailwind CSS and Chart.js.

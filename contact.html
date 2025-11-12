@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Web Scanner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4f46e5',
+                        secondary: '#6366f1',
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <!-- Navbar -->
+    <nav class="bg-primary p-4 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="home.html" class="text-white text-lg font-bold tracking-wide">Web Scanner</a>
+            <ul class="flex space-x-4">
+                <li><a href="home.html" class="text-white hover:underline">Home</a></li>
+                <li><a href="docs.html" class="text-white hover:underline">Docs</a></li>
+                <li><a href="contact.html" class="text-white hover:underline font-bold">Contact</a></li>
+                <li><button id="logout" class="text-white font-semibold bg-red-500 px-3 py-1 rounded hover:bg-red-700 transition duration-300">Logout</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contact Form -->
+    <div class="container mx-auto mt-10 p-6 bg-white shadow-lg rounded-xl max-w-2xl">
+        <h2 class="text-4xl font-bold text-primary text-center mb-2">Contact Us</h2>
+        <p class="text-gray-600 text-center mb-6">Report vulnerabilities or request support</p>
+
+        <form id="contact-form" class="space-y-4" enctype="multipart/form-data">
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Your Name</label>
+                <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:outline-none" required>
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Email Address</label>
+                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:outline-none" required>
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Message</label>
+                <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Describe the issue or vulnerability..." required></textarea>
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Upload Screenshot (Optional)</label>
+                <input type="file" id="screenshot" name="screenshot" accept="image/*" class="w-full px-4 py-2 border border-gray-300 rounded-md">
+            </div>
+
+            <!-- Google reCAPTCHA -->
+            <div class="g-recaptcha" data-sitekey="your-site-key"></div>
+
+            <button type="submit" class="w-full bg-primary hover:bg-secondary text-white py-2 rounded-md font-medium transition duration-300">Submit</button>
+        </form>
+
+        <div id="success-message" class="hidden mt-4 p-4 bg-green-100 border border-green-400 text-green-800 rounded">
+            <p>Thank you for your report! We will get back to you shortly.</p>
+        </div>
+    </div>
+
+    <footer class="bg-gray-200 text-center py-4 mt-10 text-sm text-gray-600">
+        &copy; 2025 Web Scanner. All rights reserved.
+    </footer>
+
+    <!-- reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <!-- Contact Form Script -->
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", async function(event) {
+            event.preventDefault();
+
+            const token = grecaptcha.getResponse();
+            if (!token) {
+                alert("Please complete the reCAPTCHA.");
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append("name", document.getElementById("name").value);
+            formData.append("email", document.getElementById("email").value);
+            formData.append("message", document.getElementById("message").value);
+            const screenshot = document.getElementById("screenshot").files[0];
+            if (screenshot) {
+                formData.append("screenshot", screenshot);
+            }
+            formData.append("g-recaptcha-response", token);
+
+            try {
+                const response = await fetch("http://127.0.0.1:5000/api/contact", {
+                    method: "POST",
+                    body: formData
+                });
+
+                if (response.ok) {
+                    document.getElementById("success-message").classList.remove("hidden");
+                    document.getElementById("contact-form").reset();
+                    grecaptcha.reset();
+                } else {
+                    alert("Submission failed. Please try again.");
+                }
+            } catch (error) {
+                alert("Error submitting the form.");
+            }
+        });
+
+        document.getElementById("logout").addEventListener("click", function () {
+            localStorage.removeItem("token");
+            window.location.href = "index.html";
+        });
+
+        if (!localStorage.getItem("token")) {
+            window.location.href = "index.html";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!-- Save as about.html -->
+<!DOCTYPE html>
+<html lang="en" class="transition-colors duration-500">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About - Web Scanner</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-white transition-all duration-300">
+
+  <!-- Navbar -->
+  <nav class="bg-indigo-600 p-4 dark:bg-indigo-800">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="home.html" class="text-white font-bold text-xl">Web Scanner</a>
+      <div class="flex space-x-4 items-center">
+        <a href="features.html" class="text-white hover:underline">Features</a>
+        <a href="demo.html" class="text-white hover:underline">Demo</a>
+        <a href="docs.html" class="text-white hover:underline">Docs</a>
+        <a href="contact.html" class="text-white hover:underline">Contact</a>
+        <a href="about.html" class="text-white hover:underline">Contact</a>
+        <button id="theme-toggle" class="text-white">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="min-h-screen p-6">
+    <section class="max-w-6xl mx-auto space-y-14">
+
+      <!-- Introduction -->
+      <div>
+        <h1 class="text-4xl font-extrabold mb-4">About Web Scanner</h1>
+        <p class="text-lg leading-relaxed">Web Scanner is an advanced vulnerability detection platform built to help individuals and organizations protect their websites from cyber threats. Whether you are a developer, ethical hacker, cybersecurity student, or server admin, Web Scanner helps you identify risks like SQL Injection, Cross-Site Scripting (XSS), and Denial-of-Service (DoS/DDoS) attacks before attackers exploit them.</p>
+        <p class="mt-2 text-md">This project was developed with a strong emphasis on usability, automation, real-time monitoring, and scalability. The tool is particularly useful in academic research, penetration testing practice, and small-to-medium enterprise web security workflows.</p>
+      </div>
+
+      <!-- Mission and Vision -->
+      <div>
+        <h2 class="text-2xl font-bold mb-2">🎯 Our Mission & Vision</h2>
+        <p class="text-md mb-1">Our mission is to make web security accessible and transparent for everyone. We believe that proactive vulnerability detection should be a standard practice, not a luxury.</p>
+        <p class="text-md">Our vision is to expand this project into a fully community-driven platform with AI-powered detection, visual vulnerability analytics, and integration with CI/CD pipelines.</p>
+      </div>
+
+      <!-- Technology Stack -->
+      <div>
+        <h2 class="text-2xl font-bold mb-4">🛠 Technology Stack</h2>
+        <ul class="space-y-2 text-md list-disc pl-6">
+          <li><strong>Flask & Flask-JWT:</strong> Python-based backend framework used to handle all API requests securely using JWT-based authentication.</li>
+          <li><strong>SQLAlchemy:</strong> ORM layer used to manage the storage of user data, scan results, and threat logs efficiently.</li>
+          <li><strong>WebSocket (Flask-SocketIO):</strong> Enables real-time detection updates and live log streaming to the frontend dashboard.</li>
+          <li><strong>Tailwind CSS:</strong> Utility-first CSS framework for building a clean, responsive, and modern interface with dark mode support.</li>
+          <li><strong>Chart.js:</strong> Used for rendering live data visualizations of attack statistics in the dashboard.</li>
+        </ul>
+      </div>
+
+      <!-- Project Timeline -->
+      <div>
+        <h2 class="text-2xl font-bold mb-2">📆 Project Development Timeline</h2>
+        <ol class="list-decimal space-y-2 text-md pl-6">
+          <li><strong>January 2025:</strong> Conceptualization, initial research on vulnerabilities and detection techniques.</li>
+          <li><strong>February 2025:</strong> Core backend setup, database modeling, and API development.</li>
+          <li><strong>March 2025:</strong> Integration of pattern-based threat detection algorithms and WebSocket support.</li>
+          <li><strong>April 2025:</strong> Full frontend integration, styling, user authentication system, and live demo implementation.</li>
+          <li><strong>May 2025:</strong> Final testing, optimization, documentation, and preparation for deployment or showcase.</li>
+        </ol>
+      </div>
+
+      <!-- Meet the Creator -->
+      <div>
+        <h2 class="text-2xl font-bold mb-4">👨‍💻 Meet the Creator</h2>
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 flex items-center space-x-4">
+          <img src="https://ui-avatars.com/api/?name=Atul+Kumar+Pandey&background=4f46e5&color=fff" alt="Atul" class="w-16 h-16 rounded-full shadow">
+          <div>
+            <h3 class="text-xl font-semibold">Atul Kumar Pandey</h3>
+            <p class="text-sm">Final Year Computer Science & Engineering student | Passionate about Cybersecurity, Backend Development, and Open-Source Projects. Dedicated to building practical tools to solve real-world security problems.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonials Placeholder -->
+      <div>
+        <h2 class="text-2xl font-bold mb-4">🌟 What People Say</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="bg-white dark:bg-gray-800 p-4 rounded shadow">
+            <p class="italic">"Web Scanner helped me identify hidden SQL vulnerabilities in my testing environment within minutes. The real-time chart is super helpful!"</p>
+            <p class="mt-2 text-right font-bold text-indigo-600 dark:text-indigo-400">– CyberSec Learner</p>
+          </div>
+          <div class="bg-white dark:bg-gray-800 p-4 rounded shadow">
+            <p class="italic">"The interface is clean, and the setup is surprisingly easy. I highly recommend it for beginner security researchers!"</p>
+            <p class="mt-2 text-right font-bold text-indigo-600 dark:text-indigo-400">– Ethical Hacker 101</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-indigo-600 text-white text-center py-4 dark:bg-indigo-800 mt-10">
+    <p>&copy; 2025 Web Scanner | Created by Atul Kumar Pandey</p>
+  </footer>
+
+  <!-- Theme Toggle Script -->
+  <script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+      const isDark = document.documentElement.classList.contains("dark");
+      document.getElementById("theme-toggle").textContent = isDark ? "☀️" : "🌙";
+    });
+  </script>
+
+</body>
+</html>

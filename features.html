@@ -1,0 +1,233 @@
+<!-- Save as features.html -->
+<!DOCTYPE html>
+<html lang="en" class="transition-colors duration-500">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Features - Web Scanner</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-white transition-all duration-300">
+
+  <nav class="bg-indigo-600 p-4 dark:bg-indigo-800">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="home.html" class="text-white font-bold text-xl">Web Scanner</a>
+      <div class="flex space-x-4 items-center">
+        <a href="about.html" class="text-white hover:underline">About</a>
+        <a href="demo.html" class="text-white hover:underline">Demo</a>
+        <a href="docs.html" class="text-white hover:underline">Docs</a>
+        <a href="contact.html" class="text-white hover:underline">Contact</a>
+        <button id="theme-toggle" class="text-white">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="p-6">
+    <h1 class="text-3xl font-bold text-center mb-10">Key Features of Web Scanner</h1>
+    <section class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold mb-2">1. SQL Injection Detection</h2>
+        <p class="mb-4">Identifies SQLi attempts in URL params and input fields using pattern-based filters and database error monitoring.</p>
+        <canvas id="chart1" height="100"></canvas>
+        <button class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Read More</button>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold mb-2">2. XSS Detection</h2>
+        <p class="mb-4">Detects reflected, stored, and DOM-based XSS by inspecting scripts injected into DOM and query parameters.</p>
+        <canvas id="chart2" height="100"></canvas>
+        <button class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Read More</button>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold mb-2">3. DoS/DDoS Attack Simulation</h2>
+        <p class="mb-4">Simulates flooding attacks to test how well the server handles abnormal traffic and alert thresholds.</p>
+        <canvas id="chart3" height="100"></canvas>
+        <button class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Read More</button>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold mb-2">4. Real-Time WebSocket Logging</h2>
+        <p class="mb-4">Streams threat logs to frontend via WebSocket for live monitoring of security events and server logs.</p>
+        <canvas id="chart4" height="100"></canvas>
+        <button class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Read More</button>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold mb-2">5. JWT-Based Auth System</h2>
+        <p class="mb-4">Secures APIs using JSON Web Tokens (JWT), ensuring only authorized users can scan or fetch logs.</p>
+        <canvas id="chart5" height="100"></canvas>
+        <button class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Read More</button>
+      </div>
+
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold mb-2">6. Threat Log Export</h2>
+        <p class="mb-4">Allows exporting scan logs in CSV format for documentation, audit, or compliance reports.</p>
+        <canvas id="chart6" height="100"></canvas>
+        <button class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Read More</button>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold mb-2">7. Admin Role Management</h2>
+        <p class="mb-4">Admins can delete reports, manage users, and access full scanning analytics.</p>
+        <canvas id="chart7" height="100"></canvas>
+        <button class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Read More</button>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold mb-2">8. Rate Limiting</h2>
+        <p class="mb-4">Applies Flask-Limiter to restrict excessive API usage, preventing abuse and spam.</p>
+        <canvas id="chart8" height="100"></canvas>
+        <button class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Read More</button>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold mb-2">9. Dark Mode Support</h2>
+        <p class="mb-4">Toggle between light and dark themes to improve accessibility and user comfort.</p>
+        <canvas id="chart9" height="100"></canvas>
+        <button class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Read More</button>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold mb-2">10. Chart-Based Visualization</h2>
+        <p class="mb-4">Presents threats in bar charts by severity, type, and frequency, making analysis easier.</p>
+        <canvas id="chart10" height="100"></canvas>
+        <button class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Read More</button>
+      </div>
+
+
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold mb-2">11. Email Alert System</h2>
+        <p class="mb-4">Sends instant email alerts for high-severity threats or suspicious activity detected.</p>
+        <button class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Read More</button>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold mb-2">12. User History Tracker</h2>
+        <p class="mb-4">Keeps track of all scan reports submitted by a user for auditing and reference.</p>
+        <button class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Read More</button>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold mb-2">13. File Upload Monitoring</h2>
+        <p class="mb-4">Scans file uploads for malware and other potential payloads before storing them.</p>
+        <button class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Read More</button>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold mb-2">14. URL Parameter Scanner</h2>
+        <p class="mb-4">Examines all query strings for malicious injections or abnormal characters.</p>
+        <button class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Read More</button>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold mb-2">15. GeoIP Threat Mapping</h2>
+        <p class="mb-4">Identifies and maps origin of threats based on IP location using GeoIP data.</p>
+        <button class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Read More</button>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold mb-2">16. Secure Session Handling</h2>
+        <p class="mb-4">Implements secure cookies, token-based validation, and session expiry.</p>
+        <button class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Read More</button>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold mb-2">17. Two-Factor Authentication</h2>
+        <p class="mb-4">Requires a second layer of authentication for secure user logins.</p>
+        <button class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Read More</button>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold mb-2">18. Captcha for Login</h2>
+        <p class="mb-4">Prevents bot attacks by requiring image/text captcha at login & registration.</p>
+        <button class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Read More</button>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold mb-2">19. IP Blacklisting</h2>
+        <p class="mb-4">Blocks repeat attackers or brute force attempts by blacklisting their IPs.</p>
+        <button class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Read More</button>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold mb-2">20. Severity Levels</h2>
+        <p class="mb-4">Every vulnerability is tagged with a severity level: Low, Medium, or High.</p>
+        <button class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Read More</button>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold mb-2">21. Dynamic Payload Tester</h2>
+        <p class="mb-4">Injects dynamic payloads to simulate hacker behavior in various fields.</p>
+        <button class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Read More</button>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold mb-2">22. AI-Based Pattern Learning</h2>
+        <p class="mb-4">Learns common attack patterns using lightweight ML to improve detection.</p>
+        <button class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Read More</button>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold mb-2">23. API Abuse Detection</h2>
+        <p class="mb-4">Tracks unusual API calls and flags behavior suggesting API misuse.</p>
+        <button class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Read More</button>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold mb-2">24. Security Headers Checker</h2>
+        <p class="mb-4">Ensures HTTP headers like CSP, X-Frame-Options, and HSTS are enabled.</p>
+        <button class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Read More</button>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+        <h2 class="text-xl font-semibold mb-2">25. Live Scan Comparison</h2>
+        <p class="mb-4">Compares real-time scan results with historical ones to detect changes.</p>
+        <button class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Read More</button>
+      </div>
+
+
+    </section>
+  </main>
+
+  <footer class="bg-indigo-600 text-white text-center py-4 dark:bg-indigo-800 mt-10">
+    <p>&copy; 2025 Web Scanner | Created by Atul Kumar Pandey</p>
+  </footer>
+
+  <script>
+    const charts = [1, 2, 3, 4, 5]; // You can add more indexes for up to 25
+    charts.forEach(id => {
+      const ctx = document.getElementById(`chart${id}`);
+      if (ctx) {
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Low', 'Medium', 'High'],
+            datasets: [{
+              label: 'Severity Stats',
+              data: [Math.random() * 10, Math.random() * 20, Math.random() * 30],
+              backgroundColor: ['green', 'orange', 'red']
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: { legend: { display: false } },
+            scales: {
+              y: { beginAtZero: true }
+            }
+          }
+        });
+      }
+    });
+
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+      document.getElementById("theme-toggle").textContent =
+        document.documentElement.classList.contains("dark") ? "☀️" : "🌙";
+    });
+  </script>
+</body>
+</html>
